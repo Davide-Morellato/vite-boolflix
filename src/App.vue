@@ -19,6 +19,6 @@ import MainComponent from './components/MainComponent.vue';
   <MainComponent />
 </template>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+@use '/src/style/general.scss'
 </style>
