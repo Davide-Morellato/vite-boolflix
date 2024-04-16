@@ -22,6 +22,7 @@ export default {
 
 <template>
 
+  <!-- creo un ciclo v-for in cui scorro l'array movies nello store -->
   <li v-for="(movie, i) in store.movies" :key="i">
     <h2>{{ movie.title }}</h2>
     <p> {{ movie.originalTitle }}</p>
@@ -29,6 +30,7 @@ export default {
     <span> {{ movie.vote }}</span>
   </li>
 
+   <!-- creo un ciclo v-for in cui scorro l'array tvSeries nello store -->
   <li v-for="(serie, i) in store.tvSeries" :key="i">
     <h2>{{ serie.titleSerie }}</h2>
     <p> {{ serie.originalTitleSerie }}</p>
@@ -36,23 +38,6 @@ export default {
     <span> {{ serie.voteSerie }}</span>
   </li>
 
-  <!-- <div>
-    <ul>
-      <li>{{ movie.title }}</li>
-      <li>{{ movie.originalTitle }}</li>
-      <li>{{ movie.language }}</li>
-      <li>{{ movie.vote }}</li>
-    </ul>
-  </div> -->
-
-  <!-- <div>
-    <ul>
-      <li>{{ serie.titleSerie }}</li>
-      <li>{{ serie.originalTitleSerie }}</li>
-      <li>{{ serie.languageSerie }}</li>
-      <li>{{ serie.voteSerie }}</li>
-    </ul>
-  </div> -->
 </template>
 
 <style lang="scss" scoped></style>
