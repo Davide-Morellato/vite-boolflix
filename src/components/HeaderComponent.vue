@@ -29,27 +29,27 @@ export default {
       }).then((res) => {
 
         //dichiaro una variabile in cui richiamo l'oggetto data
-        const data = res.data
-        console.log(data)
+        const dataMovies = res.data
+        console.log(dataMovies)
 
         //dichiaro una variabile in cui richiamo results nei data
-        const results = data.results
-        console.log(results)
+        const movieResults = dataMovies.results
+        console.log(movieResults)
 
         //creo un ciclo for per scorrere results e inserirli nell'array (.push)
-        for(let i = 0; i < results.length; i++){
+        for(let i = 0; i < movieResults.length; i++){
           
           //mi prendo il singolo elemento dall'array
-          const singleResult = results[i]
+          const singleResultMovie = movieResults[i]
 
           //creo le variabili degli elementi che mi interessano
-          const title = singleResult.title;
+          const title = singleResultMovie.title;
 
-          const originalTitle = singleResult.original_title;
+          const originalTitle = singleResultMovie.original_title;
 
-          const language = singleResult.original_language;
+          const language = singleResultMovie.original_language;
 
-          const vote = singleResult.vote_avarage;
+          const vote = singleResultMovie.vote_avarage;
 
           store.movies.push({title, originalTitle, language, vote})
           
@@ -80,15 +80,15 @@ export default {
           const singleResultSerie = resultsSeries[j]
 
           //creo le variabili degli elementi che mi interessano
-          const titleSerie = singleResultSerie.title;
+          const nameSerie = singleResultSerie.name;
 
-          const originalTitleSerie = singleResultSerie.original_title;
+          const originalNameSerie = singleResultSerie.original_name;
 
-          const languageSerie = singleResultSerie.original_language;
+          const language = singleResultSerie.original_language;
 
           const voteSerie = singleResultSerie.vote_avarage;
 
-          store.tvSeries.push({titleSerie, originalTitleSerie, languageSerie, voteSerie})
+          store.tvSeries.push({nameSerie, originalNameSerie, language, voteSerie})
           
         }
       });
