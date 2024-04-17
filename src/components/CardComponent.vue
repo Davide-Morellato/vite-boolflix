@@ -5,7 +5,6 @@ export default {
   data() {
     return {
       store: store,
-      imgPath: ''  //creo una proprietà per l'assegnazione della bandiera
     }
   },
 
@@ -18,46 +17,79 @@ export default {
 
   methods:{
     //creo una funzione per recuperare il percorso della bandiera e inserirla nel template
-    flag(flagItem){
+    flag(language){
 
-      this.imgPath = `/img_flags/${flagItem.language}.svg`
+      const flagPath = `/img_flags/${language}.svg`
+    
+      return flagPath
+
+    },
+
+    //creo una funzione che mi arrotondi e dividi il vote
+    solStar(vote){
+      const votes = Math.floor(vote/2)
+      return votes
+    },
+
+    //creo una funzione che mi arrotondi, sottrae e dividi il voto
+    regStar(vote){
+      const regStarVote = parseInt(5 - (Math.floor(vote/2)))
+      return regStarVote
     }
   },
 
-  mounted(){
-    this.flag(this.flagItem)
-  }
 }
 </script>
 
 <template>
 
+  <li>
+    <h1>FILM</h1>
+  </li>
   <!-- creo un ciclo v-for in cui scorro l'array movies nello store -->
-  <li v-for="(movie, i) in store.movies" :key="i">
+  <li v-for="(movie, i) in store.movies" :key="i" >
+    <div>
+      <img :src="`https://image.tmdb.org/t/p/w500/${movie.image}`" alt="">
+    </div>
+
     <h2>{{ movie.title }}</h2>
     <p> {{ movie.originalTitle }}</p>
-    <div>
-      <span>{{ movie.language }}</span>
-      <!-- collego le bandiere tramite la props -->
-      <!-- :src="`/img_flags/${flag.language}.svg`" -->
-      <img :src="imgPath" :alt="movie.language">
-    </div>
-    <span> {{ movie.vote }}</span>
+    <!-- collego le bandiere tramite la props -> :src="`/img_flags/${movie.language}.svg`" -->
+    <!-- collego la funzione che mi restituisce la bandiera -->
+    <img class="flag" :src="flag(movie.language)" :alt="movie.language">
+    <span>
+      <font-awesome-icon :icon="['fas', 'star']" v-for="star in solStar(movie.vote)"/>
+      <font-awesome-icon :icon="['far', 'star']" v-for="star in regStar(movie.vote)"/>
+    </span>
   </li>
 
+   
+   <li>
+    <h1>SERIE TV</h1>
+   </li>
    <!-- creo un ciclo v-for in cui scorro l'array tvSeries nello store -->
-  <li v-for="(serie, i) in store.tvSeries" :key="i">
+  <li v-for="(serie, i) in store.tvSeries" :key="i" >
+    <div>
+      <img :src="`https://image.tmdb.org/t/p/w500/${imageSerie}`" alt="">
+    </div>
     <h2>{{ serie.nameSerie }}</h2>
     <p> {{ serie.originalNameSerie }}</p>
-    <div>
-      <span>{{ serie.language }}</span>
-      <!-- collego le bandiere tramite la props -->
-      <!-- :src="`/img_flags/${flag.languageSerie}.svg`" -->
-      <img :src="imgPath" :alt="serie.language">
-    </div>
-    <span> {{ serie.voteSerie }}</span>
+
+    <!-- collego le bandiere tramite la props -> :src="`/img_flags/${serie.languageSerie}.svg`" -->
+    <!-- collego la funzione che mi restituisce la bandiera -->
+    <img class="flag" :src="flag(serie.languageSerie)" :alt="serie.languageSerie">
+    
+    <span> 
+      <font-awesome-icon :icon="['fas', 'star']" v-for="star in solStar(serie.voteSerie)" />
+      <font-awesome-icon :icon="['far', 'star']" v-for="star in regStar(serie.voteSerie)"/>
+    </span>
   </li>
 
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flag{
+  width: 30px;
+  height: 15px;
+}
+</style>

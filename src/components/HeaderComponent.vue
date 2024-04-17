@@ -28,6 +28,7 @@ export default {
         },
       }).then((res) => {
 
+        this.store.movies = []
         //dichiaro una variabile in cui richiamo l'oggetto data
         const dataMovies = res.data
         console.log(dataMovies)
@@ -51,7 +52,9 @@ export default {
 
           const vote = singleResultMovie.vote_avarage;
 
-          store.movies.push({title, originalTitle, language, vote})
+          const image = singleResultMovie.poster_path;
+
+          store.movies.push({title, originalTitle, language, vote, image})
           
         }
       });
@@ -65,6 +68,7 @@ export default {
         },
       }).then((res) => {
 
+        this.store.tvSeries = []
         //dichiaro una variabile in cui richiamo l'oggetto data
         const dataSeries = res.data
         console.log(dataSeries)
@@ -84,11 +88,14 @@ export default {
 
           const originalNameSerie = singleResultSerie.original_name;
 
-          const language = singleResultSerie.original_language;
+          const languageSerie = singleResultSerie.original_language;
 
           const voteSerie = singleResultSerie.vote_avarage;
 
-          store.tvSeries.push({nameSerie, originalNameSerie, language, voteSerie})
+          const imageSerie = singleResultSerie.poster_path
+
+
+          store.tvSeries.push({nameSerie, originalNameSerie, languageSerie, voteSerie, imageSerie})
           
         }
       });
