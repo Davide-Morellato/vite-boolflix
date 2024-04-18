@@ -4,8 +4,9 @@
     padding: 10px;
 }
 
-li > img {
+.info{
     display: block;
+    height: 432px;
 }
 
 .hover{
@@ -26,8 +27,9 @@ li > img {
 }
 
 .flag{
-    width: 30px;
-    height: 15px; 
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
 }
 
 .star_yellow{

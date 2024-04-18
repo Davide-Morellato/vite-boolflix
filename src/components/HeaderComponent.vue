@@ -54,7 +54,13 @@ export default {
 
             const vote = singleResultMovie.vote_average;
 
-            const image = singleResultMovie.poster_path;
+            //Ternario Abbreviato
+            //const image = singleResultMovie.poster_path ?? '/not_available/not_available.png';
+            //Ternario Classico
+            //per controllo del poster del film
+            const image = singleResultMovie.poster_path ?
+            ('https://image.tmdb.org/t/p/w342' + singleResultMovie.poster_path) :
+             '/not_available/coming-soon.jpg';
 
             const overview = singleResultMovie.overview;
 
@@ -104,6 +110,7 @@ export default {
 
             const imageSerie = singleResultSerie.poster_path;
 
+
             const overviewSerie = singleResultSerie.overviewSerie;
 
             store.tvSeries.push({
@@ -121,6 +128,7 @@ export default {
     getResponse() {
       this.getResponseMovies();
       this.getResponseSeries();
+      this.store.query = ''
     },
   },
 };

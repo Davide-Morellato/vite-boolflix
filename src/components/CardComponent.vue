@@ -30,8 +30,8 @@ export default {
 
     //creo una funzione che mi arrotondi e dividi il voto
     solStar(vote) {
-      const votes = Math.floor(vote / 2);
-      return votes;
+      const solStarVote = Math.floor(vote / 2);
+      return solStarVote;
     },
 
     //creo una funzione che mi arrotondi, sottrae e dividi il voto
@@ -47,7 +47,8 @@ export default {
   <!-- creo un ciclo v-for in cui scorro l'array movies nello store -->
   <li class="col" v-for="(movie, i) in store.movies" :key="i">
     <div>
-      <img class="info" :src="poster(movie.image)" :alt="movie.image" />
+      <!-- :src="movie.image !== null ? poster(movie.image) : '/not_available/coming-soon.jpg' " -->
+      <img class="info" :src="movie.image" :alt="movie.image" />
     </div>
     <div class="hover">
       <div>
@@ -89,7 +90,7 @@ export default {
     <div>
       <img
         class="info"
-        :src="poster(serie.imageSerie)"
+        :src="serie.imageSerie !== null ? poster(serie.imageSerie) : '/not_available/coming-soon.jpg'"
         :alt="serie.imageSerie"
       />
     </div>

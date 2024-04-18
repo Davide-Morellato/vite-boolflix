@@ -1,8 +1,8 @@
 .main_section {
-    background-color: rgb(89, 12, 12);
     padding: 30px;
     color: white;
     display: flex;
     flex-wrap: wrap;
     flex-grow: 1;
+    overflow: auto;
 }
