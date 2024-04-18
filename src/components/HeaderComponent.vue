@@ -31,7 +31,7 @@ export default {
         this.store.movies = []
         //dichiaro una variabile in cui richiamo l'oggetto data
         const dataMovies = res.data
-        console.log(dataMovies)
+        // console.log(dataMovies)
 
         //dichiaro una variabile in cui richiamo results nei data
         const movieResults = dataMovies.results
@@ -50,7 +50,7 @@ export default {
 
           const language = singleResultMovie.original_language;
 
-          const vote = singleResultMovie.vote_avarage;
+          const vote = singleResultMovie.vote_average;
 
           const image = singleResultMovie.poster_path;
 
@@ -71,7 +71,7 @@ export default {
         this.store.tvSeries = []
         //dichiaro una variabile in cui richiamo l'oggetto data
         const dataSeries = res.data
-        console.log(dataSeries)
+        // console.log(dataSeries)
 
         //dichiaro una variabile in cui richiamo results nei data
         const resultsSeries = dataSeries.results
@@ -90,9 +90,9 @@ export default {
 
           const languageSerie = singleResultSerie.original_language;
 
-          const voteSerie = singleResultSerie.vote_avarage;
+          const voteSerie = singleResultSerie.vote_average;
 
-          const imageSerie = singleResultSerie.poster_path
+          const imageSerie = singleResultSerie.poster_path;
 
 
           store.tvSeries.push({nameSerie, originalNameSerie, languageSerie, voteSerie, imageSerie})
