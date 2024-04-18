@@ -64,7 +64,10 @@ export default {
 
             const overview = singleResultMovie.overview;
 
+            const id = singleResultMovie.id;
+
             store.movies.push({
+              id,
               title,
               originalTitle,
               language,
@@ -113,7 +116,10 @@ export default {
 
             const overviewSerie = singleResultSerie.overviewSerie;
 
+            const idSerie = singleResultSerie.id;
+
             store.tvSeries.push({
+              idSerie,
               nameSerie,
               originalNameSerie,
               languageSerie,
