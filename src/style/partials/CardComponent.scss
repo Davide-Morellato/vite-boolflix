@@ -1,0 +1,35 @@
+
+.col{
+    width: calc(3 * 100% / 12 - 20px);
+    padding: 10px;
+}
+
+li > img {
+    display: block;
+}
+
+.hover{
+    display: none;
+}
+
+.col:hover .info{
+    display: none;
+}
+
+.col:hover .hover{
+    display: block;
+}
+
+
+.d-inline{
+    display: inline-block;
+}
+
+.flag{
+    width: 30px;
+    height: 15px; 
+}
+
+.star_yellow{
+    color: goldenrod;
+}

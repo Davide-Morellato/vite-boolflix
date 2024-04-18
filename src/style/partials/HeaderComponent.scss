@@ -1,0 +1,49 @@
+.header_section {
+  background-color: black;
+  padding: 30px;
+  color: white;
+}
+
+.header_section .row{
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.logo {
+  width: 150px;
+  padding: 10px;
+}
+
+.links > ul{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px;
+}
+
+.search{
+    padding: 10px;
+}
+
+.search input{
+    width: 250px;
+    height: 25px;
+}
+
+.btn_header{
+    border: none;
+    color: white;
+    background-color: rgb(130, 2, 26);
+    border-radius: 10px;
+    padding: 5px;
+    margin-left: 5px;
+    height: 27px;
+}

@@ -1,0 +1,31 @@
+/* Reset Rules */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+ul, li, ol, menu{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+img{ 
+    max-width: 100%;
+}
+
+.container{
+    max-width: 1920px;
+    margin: 0 auto;
+}

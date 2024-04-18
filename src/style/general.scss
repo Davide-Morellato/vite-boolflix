@@ -1,20 +1,5 @@
-/* Reset Rules */
+@use './partials/reset';
+@use './partials/HeaderComponent';
+@use './partials/MainComponent';
+@use './partials/CardComponent';
 
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-ul, li, ol, menu{
-    list-style: none;
-}
-
-a{
-    text-decoration: none;
-    color: currentColor;
-}
-
-img{ 
-    max-width: 100%;
-}
